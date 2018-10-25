@@ -1,2 +1,2 @@
 # Automatisation
-Projet d'automatisation et de déploiement en intégration continue
+Projet d'automatisation et de déploiement avec intégration continue
