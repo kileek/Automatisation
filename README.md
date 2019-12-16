@@ -1,2 +1,2 @@
-# Automatisation
-Projet d'automatisation et de déploiement avec intégration continue
+﻿# Automatisation
+Projet d'automatisation et  d'intégration continue du site du jeu Waven
