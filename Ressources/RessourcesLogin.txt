@@ -1,0 +1,9 @@
+*** Variables ***
+${xpathLogin}     //input[@id="ldap"]
+${xpathPassword}    //input[@id="mdp"]
+${xpathLoginButton}    //input[@id="boutonDeConnexion"]
+${xpathFrFlagButton}    //img[@id="chooseFrenchNotConnected"]
+${xpathEnFlagButton}    //img[@id="chooseEnglishNotConnected"]
+${xpathConnexionTitle}    //p[@id="connexionTitle"]
+${xpathEnterLDAP}    //label[@id="labelLDAP"]
+${xpathEnterPwd}    //label[@id="labelPassword"]

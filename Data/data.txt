@@ -1,0 +1,5 @@
+*** Variables ***
+${url}            https://www.waven-game.com/fr/
+${browser}        Chrome
+${urlgrid}        http://10.1.5.140:4444/wd/hub
+${alias}          None

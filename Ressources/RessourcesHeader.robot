@@ -1,0 +1,11 @@
+*** Variables ***
+${XpathHeaderLogo}    //a[@class="ak-logo"]
+${XpathHeaderJouer}    //li[@class="nav-item"]//a[contains(text(),$Play)]
+${XpathHeaderActu}    //a[@id="newsDropdown"]
+${XpathHeaderHeros}    //li[@class="nav-item"]//a[contains(text(),"Héros")]
+${XpathSelectFileButton}    //li[@class="nav-item"]//a[contains(text(),"Ladder")]
+${XpathAnalyseButton}    //input[@id="boutonAnalyse"]
+${XpathFirstStep}    //span[@id="etape1"]
+${XpathSecondStep}    //span[@id="etape2"]
+${XpathThirdStep}    //span[@id="etape3"]
+${XpathResultArea}    //div[@id="theLogDiv"]

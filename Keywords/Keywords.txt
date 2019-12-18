@@ -1,0 +1,72 @@
+*** Settings ***
+Library           SeleniumLibrary
+Library           BuiltIn
+Resource          ../Ressources/RessourcesLogin.txt
+Resource          ../Ressources/RessourcesHeader.robot
+Resource          ../Ressources/RessourcesHomePage.robot
+Resource          ../Ressources/RessourcesDownload.robot
+Resource          ../Ressources/RessourcesActus.robot
+Resource          ../Ressources/RessourcesNews.robot
+Resource          ../Ressources/RessourcesBlog.robot
+Resource          ../Data/data.txt
+
+*** Keywords ***
+Go To HomePage
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+
+Login
+    #Permet de se connecter à l'analyse de fichier objectif
+    #    Wait Until Keyword Succeeds    1s    2s    Input Text    ${xpathLogin}    ${Validlogin}
+    #    Wait Until Keyword Succeeds    1s    2s    Input Password    ${xpathPassword}    ${Validpassword}
+    #    Wait Until Keyword Succeeds    1s    2s    Click Button    ${xpathLoginButton}
+    #    Wait Until Keyword Succeeds    1s    2s    Page Should Contain Element    ${XpathValidLDAP}
+    #    Wait Until Keyword Succeeds    1s    2s    Page Should Contain Element    ${XpathSelectFileButton}
+    #    Wait Until Keyword Succeeds    1s    2s    Page Should Contain Element    ${xpathLoginButton}
+
+Logout
+    #Permet de se déconnecter de l'analyse de fichier objectif
+    # demander à Amaury d'enlever le margin left du bouton deconnexion et de l'entourer d'une div pour appliquer le style sur cette div
+    #    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathLogoutButton}
+    #    Wait Until Keyword Succeeds    1s    2s    Page Should Contain Element    ${xpathLoginButton}
+
+Translate
+    #    [Arguments]    ${language}
+    #    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${xpathEnFlagButton}
+    #    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${xpathFrFlagButton}
+    #    ${result}=    Get text    ${xpathEnterLDAP}
+    #    Run Keyword if    '${result}' == 'Enter your LDAP :'    Click Image    ${xpathFrFlagButton}
+
+Go To Logo
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathHeaderLogo}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathHomePageSlogan}
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlHomePage}
+
+Go To Play
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathHeaderJouer}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathDownload}
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlDownload}
+
+Go To Actus
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathHeaderActu}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathNewsDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathBlogDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathNewsDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathNews}
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlNews}
+    Go Back
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlHomePage}
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathHeaderActu}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathNewsDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathBlogDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Click Element    ${XpathBlogDropdown}
+    Wait Until Keyword Succeeds    1s    2s    Wait Until Element is visible    ${XpathActivity}
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlBlog}
+    Go Back
+    ${item}=    Get Location
+    Wait Until Keyword Succeeds    1s    2s    Should Be Equal    ${item}    ${UrlHomePage}
