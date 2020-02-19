@@ -1,2 +1,1 @@
-Ce fichier est un test d'auto execution des tests automatisés à chaque push sur la branche master
-Kamel
+Ce fichier est un test d'auto execution des tests automatisï¿½s ï¿½ chaque push sur la branche master
